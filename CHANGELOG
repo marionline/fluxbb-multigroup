@@ -1,0 +1,3 @@
+0.1b to 0.11b
+------------------
+* fixed SQL alter so it works on Postgres as well (thanks to XuMiX)
