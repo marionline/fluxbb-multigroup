@@ -37,29 +37,6 @@
 ##
 
 
-#-------- [ WARNING This mod affects the database structure! ] -------
-
-
-
-#-------- [ DESCRIPTION ] -------
-
-This mod adds "multi group functionality", which in plain english means that you can make users member of more than one group. To prevent weird memberships you cannot add the administrator or moderator group to the list of additional groups. If you want a user to be administrator or moderator you have to set the ordinary user group.
-
-
-#-------- [ NOTES ] -------
-
-An extra column is added to the "users" table, membergroupids. This column contains a comma seperated list of group ids of the groups the user is member of.
-
-
-#-------- [ SQL PGSQL ] -------
-
-	ALTER TABLE <prefix>users ADD membergroupids VARCHAR(64)
-
-#-------- [ SQL MYSQL ] -------
-
-	ALTER TABLE `<prefix>users` ADD `membergroupids` VARCHAR(64) AFTER `group_id`
-
-
 #-------- [ OPEN ] -------
 
 admin_users.php
@@ -406,7 +383,3 @@ lang/English/profile.php
 'Additional group membership' => 'Additional user groups (hold down CTRL to select more than one group)',
 
 #-------- [ END ] -------
-
-
-#
-#-----
