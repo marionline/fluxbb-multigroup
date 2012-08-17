@@ -1,22 +1,31 @@
 ##
 ##
-##        Mod title:  multigroup
+##        Mod title:  Multigroup
 ##
-##      Mod version:  1.1.1
-##  Works on FluxBB:  1.4.8, 1.4.7, 1.4.6, 1.4.5, 1.4.4
-##     Release date:  2012-01-21
-##      Review date:  2012-01-21
-##           Author:  Daris (daris91@gmail.com)
+##      Mod version:  1.0
+##  Works on FluxBB:  1.5.0
+##     Release date:  2012-08-17
+##      Review date:  2012-08-17
+##           Author:  Stefan D
+##       Maintainer:  Daris (daris91@gmail.com)
 ##
-##      Description:  Topics and forums you have read since your last logon
-##                    are saved in the database instead of a tracking cookie
-##                    (useful when you log in from different locations and
-##                    your board has a long visit timeout)
+##      Description:  This mod adds "multi group functionality", which in plain english means
+##                    that you can make users member of more than one group. To prevent weird
+##                    memberships you cannot add the administrator or moderator group to the
+##                    list of additional groups. If you want a user to be administrator or
+##                    moderator you have to set the ordinary user group.
 ##
-##   Repository URL:  http://fluxbb.org/resources/mods/track-topics-in-database/
+##   Repository URL:  http://fluxbb.org/resources/mods/multigroup/
 ##
-##   Affected files:  include/functions.php
-##                    misc.php
+##   Affected files:  admin_users.php
+##                    index.php
+##                    moderate.php
+##                    post.php
+##                    profile.php
+##                    search.php
+##                    viewforum.php
+##                    viewtopic.php
+##                    include/functions.php
 ##
 ##       Affects DB:  Yes
 ##
