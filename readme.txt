@@ -49,7 +49,7 @@ admin_users.php
 #-------- [ REPLACE WITH ] -------
 
 	if ($user_group > -1)
-		$conditions[] = 'u.group_id='.$user_group.' OR membergroupids LIKE \'%,'.$user_group.',%\' OR membergroupids LIKE \''.$user_group.',%\' OR membergroupids LIKE \'%,'.$user_group.'\'';
+		$conditions[] = 'u.group_id='.$user_group.' OR membergroupids='.$user_group.' OR membergroupids LIKE \'%,'.$user_group.',%\' OR membergroupids LIKE \''.$user_group.',%\' OR membergroupids LIKE \'%,'.$user_group.'\'';
 
 
 #-------- [ OPEN ] -------
