@@ -51,6 +51,20 @@ admin_users.php
 	if ($user_group > -1)
 		$conditions[] = 'u.group_id='.$user_group.' OR membergroupids='.$user_group.' OR membergroupids LIKE \'%,'.$user_group.',%\' OR membergroupids LIKE \''.$user_group.',%\' OR membergroupids LIKE \'%,'.$user_group.'\'';
 
+#-------- [ OPEN ] -------
+
+userlist.php
+
+#-------- [ FIND ] -------
+
+if ($show_group > -1)
+	$where_sql[] = 'u.group_id='.$show_group;
+
+#-------- [ REPLACE WITH ] -------
+
+if ($show_group > -1)
+	$where_sql[] = 'u.group_id='.$show_group.' OR membergroupids='.$show_group.' OR membergroupids LIKE \'%,'.$show_group.',%\' OR membergroupids LIKE \''.$show_group.',%\' OR membergroupids LIKE \'%,'.$show_group.'\'';
+
 
 #-------- [ OPEN ] -------
 
