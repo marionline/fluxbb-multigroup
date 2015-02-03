@@ -118,6 +118,7 @@ require PUN_ROOT.'include/common.php';
 
 #-------- [ INSERT AFTER ] -------
 
+// create SQL for multigroup mod
 $mgrp_extra = multigrp_getSql($db);
 
 
@@ -145,7 +146,7 @@ profile.php
 
 #-------- [ FIND ] -------
 
-$new_group_id = intval($_POST['group_id']);
+	$new_group_id = intval($_POST['group_id']);
 
 #-------- [ INSERT AFTER ] -------
 
@@ -160,11 +161,11 @@ $new_group_id = intval($_POST['group_id']);
 
 #-------- [ FIND ] -------
 
-$db->query('UPDATE '.$db->prefix.'users SET group_id='.$new_group_id.' WHERE id='.$id) or error('Unable to change user group', __FILE__, __LINE__, $db->error());
+	$db->query('UPDATE '.$db->prefix.'users SET group_id='.$new_group_id.' WHERE id='.$id) or error('Unable to change user group', __FILE__, __LINE__, $db->error());
 
 #-------- [ REPLACE WITH ] -------
 
-$db->query('UPDATE '.$db->prefix.'users SET group_id='.$new_group_id.$db_extra.' WHERE id='.$id) or error('Unable to change user group', __FILE__, __LINE__, $db->error());
+	$db->query('UPDATE '.$db->prefix.'users SET group_id='.$new_group_id.$db_extra.' WHERE id='.$id) or error('Unable to change user group', __FILE__, __LINE__, $db->error());
 
 
 #-------- [ FIND ] -------
@@ -239,7 +240,7 @@ $mgrp_extra = multigrp_getSql($db);
 
 #-------- [ REPLACE WITH ] -------
 
-				$result = $db->query('SELECT t.id FROM '.$db->prefix.'topics AS t INNER JOIN '.$db->prefix.'posts AS p ON t.id=p.topic_id .$mgrp_extra.' AND p.poster_id='.$pun_user['id'].' GROUP BY t.id'.($db_type == 'pgsql' ? ', t.last_post' : '').' ORDER BY t.last_post DESC') or error('Unable to fetch topic list', __FILE__, __LINE__, $db->error());
+				$result = $db->query('SELECT t.id FROM '.$db->prefix.'topics AS t INNER JOIN '.$db->prefix.'posts AS p ON t.id=p.topic_id '.$mgrp_extra.' AND p.poster_id='.$pun_user['id'].' GROUP BY t.id'.($db_type == 'pgsql' ? ', t.last_post' : '').' ORDER BY t.last_post DESC') or error('Unable to fetch topic list', __FILE__, __LINE__, $db->error());
 
 #-------- [ FIND ] -------
 
